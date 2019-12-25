@@ -6,7 +6,15 @@
 
 <script>
   export default {
-    name: 'buttonGroup'
+    name: 'buttonGroup',
+    mounted() {
+      Array.from(this.$el.children).forEach(node => {
+        let name =node.nodeName.toLowerCase()
+        if (name !== 'button') {
+          console.warn(`m-button-group组件中只能包含m-button组件, 你写入了${name}标签或组件`)
+        }
+      })
+    }
   }
 </script>
 
