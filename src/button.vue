@@ -1,11 +1,7 @@
 <template>
   <button class="m-button" :class="{[`icon-${iconPosition}`]: true}">
-    <svg class="icon loading" v-if="loading">
-      <use xlink:href="#i-loading"></use>
-    </svg>
-    <svg v-if="icon" class="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <m-icon v-if="loading" class="loading" name="loading"></m-icon>
+    <m-icon v-if="icon" :name="icon"></m-icon>
     <span class="content">
       <slot></slot>
     </span>
@@ -13,6 +9,8 @@
 </template>
 
 <script>
+  import Icon from './icon'
+
   export default {
     name: "button",
     props: {
@@ -28,6 +26,9 @@
         type: Boolean,
         default: false
       }
+    },
+    components: {
+      'm-icon': Icon
     }
   }
 </script>
@@ -65,8 +66,6 @@
 
     > .icon {
       order: 1;
-      width: 1em;
-      height: 1em;
     }
 
     > .content {
