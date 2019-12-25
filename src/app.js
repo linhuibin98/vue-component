@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Button from './button'
+import ButtonGroup from './buttonGroup'
 
 new Vue({
   el: '#app',
@@ -8,6 +9,7 @@ new Vue({
     loading2: false
   },
   components: {
-    'm-button': Button
+    'm-button': Button,
+    'm-button-group': ButtonGroup
   }
 });

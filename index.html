@@ -21,7 +21,7 @@
       --color: #333;
       --color-hover: #FF1442;
       --border-color: #999;
-      --border-hover-color: #666;
+      --border-hover-color: red;
     }
   </style>
 </head>
@@ -30,6 +30,11 @@
   <m-button :loading="loading1" @click="loading1 = !loading1">我的按钮</m-button>
   <m-button icon='setting' :loading="loading2" icon-position="left" @click="loading2 = !loading2">按钮</m-button>
   <m-button loading icon='setting' icon-position="right">我的按钮</m-button>
+  <m-button-group>
+    <m-button icon="left">上一页</m-button>
+    <m-button>更多</m-button>
+    <m-button icon="right" icon-position="right">下一页</m-button>
+  </m-button-group>
 </div>
 
 <script src="//at.alicdn.com/t/font_1582416_7htb9mlloye.js"></script>
