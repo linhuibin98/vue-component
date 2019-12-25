@@ -27,8 +27,8 @@
 </head>
 <body>
 <div id="app">
-  <m-button :loading="true">我的按钮</m-button>
-  <m-button icon='setting' icon-position="left">按钮</m-button>
+  <m-button :loading="loading1" @click="loading1 = !loading1">我的按钮</m-button>
+  <m-button icon='setting' :loading="loading2" icon-position="left" @click="loading2 = !loading2">按钮</m-button>
   <m-button loading icon='setting' icon-position="right">我的按钮</m-button>
 </div>
 
