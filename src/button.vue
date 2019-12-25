@@ -1,5 +1,8 @@
 <template>
   <button class="m-button" :class="{[`icon-${iconPosition}`]: true}">
+    <svg class="icon loading" v-if="loading">
+      <use xlink:href="#i-loading"></use>
+    </svg>
     <svg v-if="icon" class="icon">
       <use :xlink:href="`#i-${icon}`"></use>
     </svg>
@@ -20,12 +23,26 @@
         validator(value) {
           return value === 'left' || value === 'right';
         }
+      },
+      loading: {
+        type: Boolean,
+        default: false
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
+  @keyframes loading {
+
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+
+  }
   .m-button {
     padding: 0 1em;
     height: var(--button-height);
@@ -51,6 +68,7 @@
       width: 1em;
       height: 1em;
     }
+
     > .content {
       order: 2;
     }
@@ -64,6 +82,10 @@
         order: 1;
       }
 
+    }
+
+    > .loading {
+      animation: loading 1s infinite;
     }
   }
 </style>
