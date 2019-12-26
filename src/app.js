@@ -21,6 +21,7 @@ new Vue({
 
 // 单元测试
 {
+  // 测试存在icon
   const Constructor = Vue.extend(Button)
 
   const vm = new Constructor({
@@ -40,6 +41,7 @@ new Vue({
 }
 
 {
+  // 测试存在loading
   const Constructor = Vue.extend(Button)
 
   const vm = new Constructor({
